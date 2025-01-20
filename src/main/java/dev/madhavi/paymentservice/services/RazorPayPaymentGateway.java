@@ -1,14 +1,14 @@
 package dev.madhavi.paymentservice.services;
 
 import com.razorpay.RazorpayException;
-import dev.madhavi.paymentservice.services.PaymentService;
 import org.json.JSONObject;
 import com.razorpay.PaymentLink;
 import com.razorpay.RazorpayClient;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
-@Service
-public class RazorPayPaymentGateway implements PaymentService {
+@Service("razorPayPaymentGateway")
+public class RazorPayPaymentGateway implements PaymentGateway {
     private RazorpayClient razorpayClient;
 
     public RazorPayPaymentGateway(RazorpayClient razorpayClient) {
